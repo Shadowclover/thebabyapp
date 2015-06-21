@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Baby App</title>
+    
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+    
+	<style type="text/css">
+	
+		.filtro{
+			background-color:#6CA8C2;
+			z-index:1000;
+			position:absolute;
+			width:100%;
+			height:100%;
+			
+			min-height:100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			flex-grow: 1;
+			top:0px;
+			left:0px;
+			opacity:0.95;
+		}
+
+		.arriba{	
+			float: left !important;
+			margin-top:-400px;
+		}
+		
+		.video{
+			width:100%;
+		}
+		.video img{
+			width:100%;
+		}
+		
+		.videoWrapper {
+			position: relative;
+			padding-bottom: 61%; /* 16:9 */
+			/*padding-top: 25px;*/
+			height: 0;
+		}
+		.videoWrapper iframe {
+			position: absolute;
+			/*top: 220px;*/
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+	</style>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+  </head>
+  
+  <body>
+ 
+	<div class="container"> 
+		<div class="row">
+			<div class="video"><div class="videoWrapper">
+				<iframe width="1280" height="720" src="https://www.youtube.com/embed/KmlWseIqFWA?autoplay=1&rel=0&amp;showinfo=0&loop=1&playlist=KmlWseIqFWA" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+  
+		<div class="filtro" id="filtro"></div>
+  
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+	   function runIt() {
+		  $('#filtro').animate({backgroundColor:"#6CA8C2"},6000)
+		  .animate({backgroundColor:"#82B1BB"},6000)
+		  .animate({backgroundColor:"#ADD2CA"},6000)
+		  .animate({backgroundColor:"#E9D2CC"},6000, runIt);
+	   }
+
+	   runIt();
+	});
+	</script>
+  </body>
+</html>
